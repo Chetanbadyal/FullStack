@@ -22,6 +22,7 @@ import VendorMaster from './Layout/Vendor/VendorMaster'
 import DashboardVendor from './Vendor/DashboardVendor'
 import AddService from './Vendor/AddService'
 import ManageServices from './Vendor/ManageServices'
+import Enquiries from './Admin/Enquiries'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -42,6 +43,8 @@ function App() {
           <Route path='/admin' element={<Dashboard/>}/>
           <Route path='/admin/addcategories' element={<AddCategories/>}/>
           <Route path='/admin/managecategories' element={<ManageCategories/>}/>
+          <Route path='/admin/enquiries' element={<Enquiries/>}/>
+
         </Route>
         {/* Vender */}
         <Route path='/vendor' element={<VendorMaster/>}>

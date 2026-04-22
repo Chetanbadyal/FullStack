@@ -108,8 +108,8 @@ export default function AdminHeader(){
             </Link>
           </div>
         </div>
-        <Link to={'/contact'} className="nav-item nav-link">
-          Contact
+        <Link to={'/admin/enquiries'} className="nav-item nav-link">
+          Customer Enquiries
         </Link>
       </div>
       <div className="h-100 d-lg-inline-flex align-items-center d-none">

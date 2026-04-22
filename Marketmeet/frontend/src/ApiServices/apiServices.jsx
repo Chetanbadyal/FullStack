@@ -8,7 +8,9 @@ class apiServices {
     addEnquiry(data){
         return axios.post(BASE_URL + "enquiry/add",data)
     }
-
+    getEnquiries(data){
+        return axios.post(BASE_URL+"enquiry/getall",data)
+    }
     addCategory(data){
         return axios.post(BASE_URL + "category/add",data,{
     headers: {

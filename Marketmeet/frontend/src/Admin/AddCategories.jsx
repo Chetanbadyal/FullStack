@@ -110,7 +110,7 @@ export default function AddCategories(){
                 </div>
                 <div className="col-12">
                   <button className="btn btn-primary w-100 py-3" type="submit">
-                    Send Message
+                  ADD CATEGORY
                   </button>
                 </div>
               </div>
