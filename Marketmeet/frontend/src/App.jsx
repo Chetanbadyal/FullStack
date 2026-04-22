@@ -18,6 +18,10 @@ import PracticeProps from './Practice/Practice_Props'
 import MyClass from './MyClass'
 import AddCategories from './Admin/AddCategories'
 import ManageCategories from './Admin/ManageCategories'
+import VendorMaster from './Layout/Vendor/VendorMaster'
+import DashboardVendor from './Vendor/DashboardVendor'
+import AddService from './Vendor/AddService'
+import ManageServices from './Vendor/ManageServices'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,15 +32,24 @@ function App() {
    
       <BrowserRouter>
       <Routes>
+        {/* User */}
         <Route path='/' element={<Master/>}>
         <Route path='/' element={<Home/>}/>
         <Route path='/contact' element={<Contact/>}/>
         </Route>
-
+        {/* Admin */}
         <Route path='/admin' element={<AdminMaster/>}>
           <Route path='/admin' element={<Dashboard/>}/>
           <Route path='/admin/addcategories' element={<AddCategories/>}/>
           <Route path='/admin/managecategories' element={<ManageCategories/>}/>
+        </Route>
+        {/* Vender */}
+        <Route path='/vendor' element={<VendorMaster/>}>
+        <Route path='/vendor' element={<DashboardVendor/>}/>
+        <Route path='/vendor/addservice' element={<AddService/>}/>
+        <Route path='/vendor/manageservice' element={<ManageServices/>}/>
+
+
         </Route>
       </Routes>
       </BrowserRouter>
