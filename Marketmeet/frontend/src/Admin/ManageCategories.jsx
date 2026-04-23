@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import apiServices from "../ApiServices/apiServices";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 export default function ManageCategories() {
     const [categoryData, setCategoryData] = useState([]);
@@ -81,6 +82,8 @@ export default function ManageCategories() {
                                             <th scope="col">Image</th>
                                             <th scope="col">Description</th>
                                             <th scope="col">Delete</th>
+                                            <th scope="col">Update</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -95,6 +98,11 @@ export default function ManageCategories() {
                                             <td>{el?.description}</td>
                                             <td>
                                                 <button className="btn btn-danger" onClick={()=>{deleteData(el?._id)}}>Delete</button>
+                                            </td>
+                                            <td>
+                                                <Link to={'/admin/updatecategories/'+el?._id}>
+                                                <button className="btn btn-primary">Update</button>
+                                                </Link>
                                             </td>
                                         </tr>
                                         </>

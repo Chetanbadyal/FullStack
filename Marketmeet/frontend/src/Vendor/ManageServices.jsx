@@ -4,43 +4,49 @@ import { toast } from "react-toastify";
 import { useState } from 'react';
 const ManageServices = () => {
  const[serviceData,setServiceData]=useState([]);
-    // const[isDelete,setIsDelete]=useState(false);
+ const[isDelete,setDeleteService]=useState(false);
 
     useEffect(()=>{
         apiServices.getServices()
-            .then((res) => {
-                setServiceData(res.data.data)
-                console.log(res.data.data)
-            })
-            .catch((err) => {
-                toast.error("SOMETHING WENT WRONG")
-                console.log(err)
-            })
-    })
+        .then((res)=>{
+            setServiceData(res.data.data)
+            console.log(res.data.data)
+        })
+        .catch((err)=>{
+            toast.error("something went wrong")
+            console.log(err)
+        })
+            // .then((res) => {
+            //     setServiceData(res.data.data)
+            //     console.log(res.data.data)
+            // })
+            // .catch((err) => {
+            //     toast.error("SOMETHING WENT WRONG")
+            //     console.log(err)
+            // })
+    },[isDelete])
 
-    // var deleteData = (id)=>{
-    //     setIsDelete(true)
-    //     let data = {
-    //         _id:id
-    //     }
+    var deleteData = (id)=>{
+        setDeleteService(true)
+        let data = {
+            _id:id
+        }
 
-    //     apiServices.deleteCategory(data)
-    //     .then((res)=>{
-    //         toast.success(res.data.message)
-    //         setIsDelete(false)
-    //     })
-    //     .catch((err)=>{
-    //         toast.error(res.data.message)
-    //         console.log(err)
-    //     })
-    // }
+        apiServices.deleteService(data)
+        .then((res)=>{
+            toast.success(res.data.message)
+        })
+        .catch((err)=>{
+            toast.error(res.data.message)
+        })
+    }
   return (
          <>
             {/* Page Header Start */}
             <div className="container-fluid page-header py-5">
                 <div className="container py-5">
                     <h1 className="display-3 text-white mb-3 animated slideInDown">
-                        MANAGE CATEGORIES
+                        MANAGE SERVICES
                     </h1>
                     <nav aria-label="breadcrumb animated slideInDown">
                         <ol className="breadcrumb">
@@ -52,7 +58,7 @@ const ManageServices = () => {
 
 
                             <li className="breadcrumb-item text-white active" aria-current="page">
-                                MANAGE CATEGORIES
+                                MANAGE SERVICES
                             </li>
                         </ol>
                     </nav>
@@ -69,31 +75,35 @@ const ManageServices = () => {
                         >
                             <div className="p-lg-5 ps-lg-0">
                                 <div className="section-title text-start">
-                                    <h1 className="display-5 mb-4 text-center">MANAGE CATEGORIES</h1>
+                                    <h1 className="display-5 mb-4 text-center">MANAGE SERVICES HERE</h1>
                                 </div>
 
-                                <table class="table">
+                                <table >
                                     <thead>
-                                        <tr>
+                                        <tr className='bg-secondary text-white'>
                                             <th scope="col">Sr No.</th>
                                             <th scope="col">Service Name</th>
                                             <th scope="col">Price</th>
                                             <th scope="col">Description</th>
                                             <th scope="col">Image</th>
                                             <th scope="col">Vender Id</th>
-                                          
+                                            <th scope='col'>Delete</th>
+                                            <th scope='col'>Update</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                        {serviceData?.map((el,index)=>(
                                         <>
-                                         <tr>
+                                         <tr key={el._id}>
                                             <th scope="row">{index + 1}</th>
                                             <td>{el?.ServiceName}</td>
                                             <td>{el?.Price}</td>
                                             <td>{el?.description}</td>
                                             <td><img src={el?.ServiceImage} height={200}/></td>
                                             <td>{el?.VenderId}</td>
+                                            <td><button className='btn btn-danger' onClick={()=>{deleteData(el?._id)}}>Delete</button></td>
+                                            <td><button className='btn btn-primary'>Update</button></td>
+
 {/* 
                                             <td>
                                                 <button className="btn btn-danger" onClick={()=>{deleteData(el?._id)}}>Delete</button>

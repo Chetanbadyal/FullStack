@@ -23,6 +23,8 @@ import DashboardVendor from './Vendor/DashboardVendor'
 import AddService from './Vendor/AddService'
 import ManageServices from './Vendor/ManageServices'
 import Enquiries from './Admin/Enquiries'
+import UpdateCategory from './Admin/UpdateCategories'
+import UpdateCategories from './Admin/UpdateCategories'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -44,6 +46,7 @@ function App() {
           <Route path='/admin/addcategories' element={<AddCategories/>}/>
           <Route path='/admin/managecategories' element={<ManageCategories/>}/>
           <Route path='/admin/enquiries' element={<Enquiries/>}/>
+          <Route path='/admin/updatecategories/:id' element={<UpdateCategories/>}/>
 
         </Route>
         {/* Vender */}
