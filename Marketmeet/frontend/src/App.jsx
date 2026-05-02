@@ -25,6 +25,9 @@ import ManageServices from './Vendor/ManageServices'
 import Enquiries from './Admin/Enquiries'
 import UpdateCategory from './Admin/UpdateCategories'
 import UpdateCategories from './Admin/UpdateCategories'
+import Register from './User/Register'
+import UserLogin from './User/UserLogin'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -39,6 +42,9 @@ function App() {
         <Route path='/' element={<Master/>}>
         <Route path='/' element={<Home/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/signin'  element={<Register/>}/>
+        <Route path='/Login'  element={<UserLogin/>}/>
+
         </Route>
         {/* Admin */}
         <Route path='/admin' element={<AdminMaster/>}>
