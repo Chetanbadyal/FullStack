@@ -48,7 +48,11 @@ class apiServices {
     deleteService(data){
         return axios.post(BASE_URL + "/services/deleteData",qs.stringify(data))
     }
-    
+    //register
+    register(data){
+        return axios.post(BASE_URL + "/services/deleteData",qs.stringify(data))
+        
+    }
     
 }
 

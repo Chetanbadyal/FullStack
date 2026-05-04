@@ -567,3 +567,9 @@
 .btnsad{
     background-color: red;
 }
+.logda{
+    background-color: green;
+    border-radius: 20px;
+    color: white;
+    font-size: large;
+}

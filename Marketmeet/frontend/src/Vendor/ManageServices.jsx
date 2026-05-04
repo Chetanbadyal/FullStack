@@ -97,7 +97,7 @@ const ManageServices = () => {
                                          <tr key={el._id}>
                                             <th scope="row">{index + 1}</th>
                                             <td>{el?.ServiceName}</td>
-                                            <td>{el?.Price}</td>
+                                                <td>{el?.Price}</td>
                                             <td>{el?.description}</td>
                                             <td><img src={el?.ServiceImage} height={200}/></td>
                                             <td>{el?.VenderId}</td>

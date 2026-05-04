@@ -97,10 +97,10 @@ export default function Header(){
           Contact
         </Link>
          <Link to={'/Signin'    } className="nav-item nav-link">
-         <button>SignUp</button>
+         <button className="logda">SignUp</button>
         </Link>
         <Link to={'/Login'} className="nav-item nav-link">
-         <button>Login</button>
+         <button className="logda">Login</button>
         </Link>
       </div>
       <div className="h-100 d-lg-inline-flex align-items-center d-none">
