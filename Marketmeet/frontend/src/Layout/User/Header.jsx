@@ -97,7 +97,7 @@ export default function Header(){
           Contact
         </Link>
          <Link to={'/Signin'    } className="nav-item nav-link">
-         <button>Sign in</button>
+         <button>SignUp</button>
         </Link>
         <Link to={'/Login'} className="nav-item nav-link">
          <button>Login</button>
